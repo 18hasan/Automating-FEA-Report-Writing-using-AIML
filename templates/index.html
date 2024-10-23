@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+    <title>Stress and Deformation Predictor</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Stress and Deformation Predictor</h1>
+      <form
+        id="inputForm"
+        method="post"
+        enctype="multipart/form-data"
+        action="/upload"
+      >
+        <label for="thickness">Thickness (mm):</label>
+        <input type="number" name="thickness" required />
+
+        <label for="diameter">Diameter (mm):</label>
+        <input type="number" name="diameter" required />
+
+        <label for="material">Material:</label>
+        <input type="text" name="material" required />
+
+        <label for="force">Force (N):</label>
+        <input type="number" name="force" required />
+
+        <label for="image">Upload Image:</label>
+        <input type="file" name="image" accept="image/*" required />
+
+        <button type="submit">Predict and Download Report</button>
+      </form>
+    </div>
+  </body>
+</html>
